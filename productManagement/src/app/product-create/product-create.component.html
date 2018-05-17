@@ -1,0 +1,14 @@
+
+    <h2>Create a New Product</h2>
+    <form #loginForm="ngForm" (submit)='onSubmit($event)'>
+        Title : <input type="text" name="product.title"[(ngModel)]="product.title" required/>*<br/><br/>
+        Price : <input type="text" name="product.price"[(ngModel)]="product.price"/>*<br/><br/>
+        Image : <input type="text" name="product.image"[(ngModel)]="product.image"/><br/><br/>
+        <div *ngIf='errorsVal'>
+            <p *ngFor='let err of errors'> {{err.message}}</p>
+                   
+            </div>
+        <button type="submit" [disabled]="loginForm.form.invalid" class="btn">Create</button> &nbsp; &nbsp;
+        <button class='btn' (click)='cancelCreate()'>Cancel</button><br/><br/>
+    </form>
+    

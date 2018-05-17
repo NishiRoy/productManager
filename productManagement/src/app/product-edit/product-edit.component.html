@@ -1,0 +1,13 @@
+<div >
+    <form (submit)='onSubmit($event)'>
+        Title : <input type="text" name="product.title"[(ngModel)]="product.title"/>*<br/><br/>
+        Price : <input type="text" name="product.price"[(ngModel)]="product.price"/>*<br/><br/>
+        Image : <input type="text" name="product.image"[(ngModel)]="product.image"/><br/><br/>
+        <div *ngIf='errorsVal'>
+            <p *ngFor='let err of errors'> {{err.message}}</p>
+                   
+            </div>
+        <button type="submit" class="btn">Edit</button> &nbsp; &nbsp;
+        <button class='btn' (click)='cancelCreate()'>Cancel</button><br/><br/>
+        </form>
+</div>

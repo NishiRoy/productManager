@@ -1,0 +1,32 @@
+<div class="results" (myEvent)='onloadAgain()'>
+  <h2>Products List</h2>
+ 
+    <table *ngFor="let product of products">
+        <tr>
+         
+            <td *ngIf="product.image">
+                <img src='{{product.image}}'>
+            </td> 
+            <td>
+
+            </td>           
+        </tr>
+        <tr>
+            <td>
+               <span class="items"> {{product.title}}
+            
+            &nbsp; &nbsp; &nbsp; 
+                $ {{product.price}}.00</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class='btn' [routerLink]="['edit',product._id]">Edit</button>
+            
+                <button class='btn'(click)='delete(product._id)'>Delete</button>
+            </td>
+        </tr>
+    </table>
+  
+<router-outlet ></router-outlet>
+</div>

@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="wrapper">
+  <h1>
+   {{ title }}
+  </h1>
+  <button class='nav' [routerLink]="['home']">Home</button>
+  <button class='nav' [routerLink]="['productlist']">Product-List</button>
+  <button class='nav' [routerLink]="['productcreate']">Product-Create</button>
+
+  <button class='nav' (click)="trythis()" [ngStyle]="{'background-color': color}">Click Me</button>
+
+<router-outlet></router-outlet>
